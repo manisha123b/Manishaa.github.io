@@ -1,4 +1,4 @@
-/* General Page Styling */
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -10,11 +10,12 @@ body {
     padding: 20px;
 }
 
-/* 🔹 Stylish Header Block */
+
 .header-block {
     background: white;
     padding: 20px;
-    width: 360px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -36,10 +37,11 @@ body {
 
 .container {
     background: white;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
 }
 
@@ -50,7 +52,7 @@ body {
     color: #4CAF50;
 }
 
-/* Input Section */
+
 .input-section {
     display: flex;
     gap: 10px;
@@ -59,9 +61,10 @@ body {
 
 input {
     flex: 1;
-    padding: 8px;
+    padding: 10px;
     border: 2px solid #ff758c;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
@@ -69,8 +72,9 @@ button {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 5px;
+    font-size: 16px;
     transition: 0.3s;
 }
 
@@ -82,11 +86,19 @@ button:hover {
 .task-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     text-align: left;
+    gap: 10px;
 }
 
 .task-section {
-    width: 48%;
+    width: 100%;
+}
+
+@media (min-width: 600px) {
+    .task-section {
+        width: 48%;
+    }
 }
 
 h2 {
@@ -107,10 +119,11 @@ li {
     justify-content: space-between;
     align-items: center;
     background: #fff;
-    padding: 8px;
+    padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
 }
 
 
@@ -124,8 +137,9 @@ li {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 6px 8px;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 .delete-btn {
@@ -133,11 +147,12 @@ li {
     color: white;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 6px 8px;
     border-radius: 5px;
+    font-size: 14px;
 }
 
-/* Confetti Animation */
+/* 🎉 Confetti Animation */
 .confetti {
     position: fixed;
     width: 10px;
@@ -152,5 +167,38 @@ li {
     to {
         transform: translateY(100vh) rotate(720deg);
         opacity: 0;
+    }
+}
+
+/* 🔹 Mobile Responsiveness */
+@media (max-width: 480px) {
+    .header-block {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .input-section {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .btn-group button {
+        font-size: 12px;
+        padding: 5px;
     }
 }
